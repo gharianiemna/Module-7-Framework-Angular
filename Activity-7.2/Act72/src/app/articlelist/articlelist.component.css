@@ -5,6 +5,13 @@ list-style: none;
     padding: 0;
 margin: 2rem;
 }
+.card {
+
+    box-sizing: border-box;
+
+    padding: 10px 30px;
+    box-shadow: lightgray 4px 4px 20px;
+}
 
 h2{
     margin: 0 0 2em 0;
@@ -48,7 +55,7 @@ button{
 
 .articles .badge {
     display: inline-block;
-    font-size: small;
+    font-size: medium;
     color: white;
   
     background-color:#2288d1;
