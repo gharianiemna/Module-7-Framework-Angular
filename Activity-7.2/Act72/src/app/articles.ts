@@ -4,5 +4,5 @@ export interface Article {
     content: string;
     date:Date;
     author:string   ;
-    comment:string    
+    comment:Array<any>  
 }
