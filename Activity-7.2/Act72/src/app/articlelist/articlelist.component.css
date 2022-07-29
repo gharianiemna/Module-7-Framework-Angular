@@ -1,0 +1,64 @@
+/* HeroesComponent's private CSS styles */
+.articles {
+    margin: 0 0 2em 0;
+list-style: none;
+    padding: 0;
+margin: 2rem;
+}
+
+h2{
+    margin: 0 0 2em 0;
+    
+        padding: 0;
+        margin: 2rem;
+}
+button{
+
+        
+            margin: 2rem;
+}
+.articles li {
+    position: relative;
+    cursor: pointer;
+}
+
+.articles li:hover {
+    left: .1em;
+}
+
+.articles a {
+    color: white;
+    text-decoration: none;
+   
+  
+    border-radius: 4px;
+    display: block;
+    width: 100%;
+}
+
+.articles a:hover {
+    color: #2288d1;
+    background-color: #e6e6e6;
+}
+
+.articles a:active {
+    background-color:#2288d1;
+    color: #fafafa;
+}
+
+.articles .badge {
+    display: inline-block;
+    font-size: small;
+    color: white;
+  
+    background-color:#2288d1;
+    /* line-height: 1em; */
+    position: relative;
+    left: -1px;
+    top: -4px;
+    height: 1.8em;
+    min-width: 16px;
+    text-align: right;
+    margin-right: .8em;
+    border-radius: 4px ;
+}
