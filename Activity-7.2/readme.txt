@@ -1,4 +1,4 @@
-Leçon 7.1 : Présentation Du Framework Angular
+Leçon 7.2 : Présentation Du Framework Angular
 
 Pour exécuter le code voici les différentes commandes:
 
@@ -12,5 +12,13 @@ cd Act72
 3-Installer les dépendances 
 npm install
 
-3-Lancer le serveur 
+4-Lancer le serveur 
 ng serve --o
+
+5-Suivre les routes :
+- Page acceuil Home
+	 "/"
+- Page Articles 
+	bouton navbar ou bien bouton page acceuil accéder aux actualitées ou bien la route "/articleList"
+- Page details
+	bouton afficher les detaile dans la page Articles (/articleList)

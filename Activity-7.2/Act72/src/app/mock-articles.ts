@@ -6,7 +6,7 @@ export const ARTICLES: Article[] = [
             id:1,
             title: "RENCONTRE AVEC SARA LUQUE VENZALÁ ",
             content: "Dans ce témoignage, Sara Luque, IT Talent attraction & Business Development Specialist chez Talan en Espagne, nous raconte son expérience à la Talan Talent Attraction and Business Development Academy située dans le Centre d'excellence de Malaga. ",
-            date:new Date('11-07-2022'),
+            date:new Date('07-11-2022'),
             author:'Sara Luque',
             comment:"La Tunisie compte beaucoup de femmes ingénieures. « Lors de mon stage de fin d’études à chez Talan en Tunisie, les équipes étaient mixtes. "
         },
@@ -14,7 +14,7 @@ export const ARTICLES: Article[] = [
             id:2, 
             title: "TALAN MEMBRE DE LA FNFE ",
             content: "En mai 2022, Talan est devenu membre du Forum National de la Facturation Électronique et des marchés publiques (FNFE - MPE). À partir du mois de juillet 2024, toutes les entreprises françaises auront l'obligation d'être en mesure de réceptionner les factures au format électronique, selon des contraintes techniques spécifiées par l'État. De manière progressive, toutes les entreprises françaises devront également émettre des factures électroniques.",
-            date:new Date('08-07-2022'),
+            date:new Date('07-08-2022'),
             author:'Amaury Languillat',
             comment:"J'ai intégré l'informatique à l'université pour des raisons économiques, plus que tout. Le métier d'informaticien était considéré comme très lucratif à l'époque et obtenir ce diplôme était mon billet pour une vie plus stable financièrement.!"
         },
@@ -22,7 +22,7 @@ export const ARTICLES: Article[] = [
             id:3,
             title: "MÉTAVERS : L’IMMERSIF AU SERVICE D’UNE NOUVELLE EXPÉRIENCE POUR LES CLIENTS ",
             content: "Les principes de l’immersif portés par le métavers, ne se limitent pas au full-virtuel, de même que le digital ne se réduit pas au full digital. Il s’agit plutôt d’une tendance lourde qui consiste à mêler à différents degrés, réalité et virtuel, pour venir considérablement ouvrir l’éventail des possibilités dont les marques disposent pour enrichir les expériences qu’elles proposent à leurs clients. ",
-            date:new Date('08-07-2022'),
+            date:new Date('02-08-2022'),
             author:' Brigitte Gouarin',
             comment:"J'ai toujours aimé les chiffres, l'analyse de données. Comprendre et résoudre des problèmes. Alors quand il a fallu choisir mes études, je me suis orientée vers les stastiques."
         },
@@ -38,7 +38,7 @@ export const ARTICLES: Article[] = [
             id:5,
             title: " TALAN MET L’IA AU CŒUR DE L’APPLICATION RECOVUP POUR MIEUX GUÉRIR LES TMS",
             content: " La startup Skeewai, co-fondée notamment par le Dr Mehdi Roudesli, médecin spécialisé en médecine sportive et Nicolas Ducrocq, kinésithérapeute, a mis au point Recovup, une solution destinée à prévenir les troubles muscolo-squelettiques (TMS) et à faciliter l’auto-rééeducation",
-            date:new Date('06-07-2022'),
+            date:new Date('07-06-2022'),
             author:'Marjorie Philippon',
             comment:"uand on s'intéresse au secteur technologique, il y a deux softskills qui prennent le dessus"
         },
@@ -46,7 +46,7 @@ export const ARTICLES: Article[] = [
             id:5,
             title: " STRATÉGIE RSE : OUTILLEZ-VOUS POUR AVOIR UN IMPACT RÉEL !",
             content: " Un webinar en partenariat avec Board a eu lieu le 16 juin. Le replay est disponible !",
-            date:new Date('04-07-2022'),
+            date:new Date('07-04-2022'),
            author:'Stéphanie Butorovic',
             comment:"Le secteur des nouvelles technologies est vaste et en constante évolution."
         },
