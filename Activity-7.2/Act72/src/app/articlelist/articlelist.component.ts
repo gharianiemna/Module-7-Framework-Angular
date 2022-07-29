@@ -5,7 +5,7 @@ import { Location } from '@angular/common';
 @Component({
   selector: 'app-articlelist',
   templateUrl: './articlelist.component.html',
-  styleUrls: ['./articlelist.component.css']
+  styleUrls: ['./articlelist.component.scss']
 })
 export class ArticlelistComponent implements OnInit {
 

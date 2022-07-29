@@ -1,0 +1,30 @@
+.card{
+    display: flex;
+        flex-direction: column;
+        align-content: center;
+        align-items: center;
+     
+        box-sizing: border-box;
+            width: 50%;
+            margin: 20px auto;
+            padding: 10px 30px;
+            box-shadow: lightgray 4px 4px 20px;
+            
+            .card-text {
+                    padding-top: 20px auto;
+                }
+            
+                .cardDetail {
+                    display: flex;
+                    flex-direction: column;
+                    align-content: center;
+                    text-align: justify;
+                    align-items: center;
+                    margin: 2rem;
+                }
+            
+            
+                .card-footer {
+                    font-size: small;
+                }
+}

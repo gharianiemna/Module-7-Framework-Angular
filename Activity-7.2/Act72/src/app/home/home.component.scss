@@ -5,15 +5,13 @@
     align-items: center;
     margin: 2rem;
     font-family: Georgia, 'Times New Roman', Times, serif;
+a {
+        color: white;
+        text-decoration: none;
 
+
+        border-radius: 4px;
+        display: block;
+        width: 100%;
+    }
 }
-.home  a {
-     color: white;
-     text-decoration: none;
-
-
-     border-radius: 4px;
-     display: block;
-     width: 100%;
- }
- 

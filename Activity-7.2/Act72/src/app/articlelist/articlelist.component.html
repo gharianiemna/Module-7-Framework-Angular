@@ -1,4 +1,4 @@
-<h2>Talan Articles</h2>
+<h2>Les Actualitées de TALAN:</h2>
 
 <ul class="articles">
     <li *ngFor="let article of articles  ">
@@ -9,8 +9,8 @@
             {{article.content}}
         </div>
     </div>
-    <span class="badge"><a routerLink="/detail/{{article.id}}">Details</a> </span> 
+    <span class="badge"><a routerLink="/detail/{{article.id}}">Détails</a> </span> 
     </li>
 </ul>
 
-<button class="btn btn-primary" type="button" (click)="goBack()">go back</button>
+<button class="btn btn-primary" type="button" (click)="goBack()">Retour</button>
