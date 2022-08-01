@@ -3,7 +3,9 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Article } from '../articles';
 import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { formatDate } from '@angular/common';
+import { ArticlesService } from './../articles.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-new-article',
@@ -15,13 +17,14 @@ export class NewArticleComponent implements OnInit {
   articleForm!: FormGroup;
   articlePreview$!: Observable<Article>;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder,  private router: Router,
+   private ArticlesService: ArticlesService,   ) { }
 
  ngOnInit(): void {
     this.articleForm = this.formBuilder.group({
         title: [null, [Validators.required]],
         content:  [null, [Validators.required, Validators.maxLength(225)]],
-        date: [formatDate(new Date(),  'yyyy-MM-dd', 'en')],
+        date: [null],
         author:[null],
     }, {
     updateOn: 'blur'
@@ -36,6 +39,7 @@ export class NewArticleComponent implements OnInit {
 }
 
 onSubmitForm() {
-    console.log(this.articleForm.value);
+    this.ArticlesService.addArticle(this.articleForm.value);
+    this.router.navigateByUrl('/articleList');
 }
 }

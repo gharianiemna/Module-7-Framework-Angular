@@ -7,7 +7,7 @@ import { DetailsComponent } from './details/details.component';
 import { ArticlelistComponent } from './articlelist/articlelist.component';
 import { HeaderComponent } from './header/header.component';
 import { ReactiveFormsModule} from '@angular/forms';
-import { NewArticleComponent } from './new-article/new-article.component'
+import { NewArticleComponent } from './new-article/new-article.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +17,7 @@ import { NewArticleComponent } from './new-article/new-article.component'
     ArticlelistComponent,
     HeaderComponent,
     NewArticleComponent,
+
   ],
   imports: [
     BrowserModule,

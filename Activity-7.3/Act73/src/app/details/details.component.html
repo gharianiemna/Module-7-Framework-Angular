@@ -15,7 +15,31 @@
         <div *ngFor="let comment of article.comment">
             <p>{{comment.content}} <br> par: <b>{{comment.author}}</b></p>
         </div>  
+      
+        <div class="container">
+            <div class="commentForm">
+                <form [formGroup]="commentForm">
+                    <h6>Entrez votre commentire</h6>
+                    <div class="mb-3">
+                        <span class="form-label" for="content">Description:</span>
+                        <textarea class="form-control" aria-label="With textarea" id="content" formControlName="content"
+                            rows="4"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" id="basic-addon1" for="author">Auteur:</label>
+                        <input type="text" class="form-control" aria-label="author" aria-describedby="basic-addon1" id="author"
+                            formControlName="author">
+                    </div>
+        
+                    <div class="action-buttons">
+                        <button type="submit" (click)="onSubmitForm()" class="btn btn-success"
+                            [disabled]="commentForm.invalid">Enregistrer</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
-    <button class="btn btn-primary" type="button" (click)="goBack()">Retour</button>
+
 </div>
+<button class="btn btn-secondary" type="button" (click)="goBack()">Retour</button>
 
