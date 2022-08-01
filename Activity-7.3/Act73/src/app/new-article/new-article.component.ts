@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, ValidatorFn, AbstractControl } from '@angular/forms';
 import { Article } from '../articles';
 import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -16,6 +16,8 @@ export class NewArticleComponent implements OnInit {
 
   articleForm!: FormGroup;
   articlePreview$!: Observable<Article>;
+  isValidDate:any;
+  error:any={isError:false,errorMessage:''};
 
   constructor(private formBuilder: FormBuilder,  private router: Router,
    private ArticlesService: ArticlesService,   ) { }
@@ -42,4 +44,14 @@ onSubmitForm() {
     this.ArticlesService.addArticle(this.articleForm.value);
     this.router.navigateByUrl('/articleList');
 }
+
+//   validateDates(): ValidatorFn{
+//     return (control: AbstractControl): {[key: string]: any} | null => {
+//     this.isValidDate = true;
+//      return (this.formBuilder.group.date > new Date())? {invalidDate: 'You cannot use future dates' } 
+//       : null;
+//   }
+   
+//   }
 }
+

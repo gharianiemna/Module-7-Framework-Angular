@@ -23,7 +23,7 @@
 <div class="mb-3">
     <label  class="form-label" id="basic-addon1" for="date" >Date:</label>
     <input  id="date" type="date" formControlName="date" class="form-control" aria-label="date" 
-        aria-describedby="basic-addon1"  >
+        aria-describedby="basic-addon1" data-date-end-date="0d" >
 </div>
 <div class="action-buttons">
     <button type="submit" (click)="onSubmitForm()"  class="btn btn-success" [disabled]="articleForm.invalid">Enregistrer</button>

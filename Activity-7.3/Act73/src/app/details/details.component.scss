@@ -41,12 +41,27 @@ body {
 }
 
 .container {
-    width: 50%;
+   
     box-shadow: lightgray 4px 4px 20px;
     border-radius: 10px;
 
     .commentForm {
         margin: 20px auto;
         padding: 10px 30px;
+        font-size: small;
     }
+    .form-control{
+           
+            font-size: small;
+        }
 }
+ .ng-valid[required],
+ .ng-valid.required {
+     border-left: 5px solid #42A948;
+     /* green */
+ }
+
+ .ng-invalid:not(form) {
+     border-left: 2px solid red;
+     /* red */
+ }

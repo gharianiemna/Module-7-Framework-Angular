@@ -23,11 +23,11 @@ export class ArticlesService {
  
 
  addComment(formValue: { content: string, author: string }, id: number ){
- const comments=ARTICLES.find(h => h.id === id)!.comment;
- const newComment = {
-       ...formValue
-    };
- return comments.push(newComment);
+  const comments=ARTICLES.find(h => h.id === id)!.comment;
+  const newComment = {
+        ...formValue
+      };
+  return comments.push(newComment);
   }
 
 

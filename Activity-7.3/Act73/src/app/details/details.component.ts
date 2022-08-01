@@ -26,22 +26,19 @@ export class DetailsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.getDetail();
-    this.commentForm = this.formBuilder.group({
-
-        content:  [null, [Validators.required, Validators.maxLength(225)]],
-        author:[null, [Validators.required]],
-    }, {
-    updateOn: 'blur'
-});
-
+      this.getDetail();
+      this.commentForm = this.formBuilder.group({
+          content:  [null, [Validators.required, Validators.maxLength(225)]],
+          author:[null, [Validators.required]],
+      }, {
+      updateOn: 'blur'
+      });
   }
 
 
   getDetail(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
-   this.ArticlesService.getDetail(id)
-      .subscribe(article => this.article = article);
+    this.ArticlesService.getDetail(id).subscribe(article => this.article = article);
   }
 
   goBack(): void {
