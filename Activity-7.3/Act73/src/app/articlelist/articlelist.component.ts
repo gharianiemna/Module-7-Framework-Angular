@@ -2,6 +2,7 @@ import { ArticlesService } from './../articles.service';
 import { Component, OnInit } from '@angular/core';
 import { Article } from '../articles';
 import { Location } from '@angular/common';
+import {Router} from '@angular/router'
 @Component({
   selector: 'app-articlelist',
   templateUrl: './articlelist.component.html',
@@ -11,7 +12,7 @@ export class ArticlelistComponent implements OnInit {
 
     articles: Article[] = [];
 
-    constructor(private ArticlesService: ArticlesService,     private location: Location) {
+    constructor(private ArticlesService: ArticlesService, private router:Router    ,private location: Location) {
 
       }
     getArticle(): void {
@@ -26,4 +27,7 @@ export class ArticlelistComponent implements OnInit {
     goBack(): void {
         this.location.back();
       }
+        onAddNewArticle() {
+    this.router.navigateByUrl('/create');
+  }
 }

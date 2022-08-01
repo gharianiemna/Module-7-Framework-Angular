@@ -1,0 +1,21 @@
+
+
+<div  class="cardDetail" *ngIf="article">
+    <div class="card" style="width: 40rem;">
+        <img src="https://talan.com/fileadmin/_processed_/d/6/csm_20190222-RM-Talan-014_d7c048c3a7.jpg" class="card-img-top" alt="talan">
+        <div class="card-body">
+            <br>
+            <h5 class="card-title">{{article.title | uppercase}}</h5>
+            <p class="card-text">{{article.content}}</p>
+            <br>
+            <div><span><b>Auteur: </b> </span>{{article.author}}</div>
+            <div><span><b>Date: </b></span>{{article.date | date: ' d MMMM yyyy'}}</div>
+        </div>
+        <div class="card-footer"> <b>Commentaires:</b>
+        <div *ngFor="let comment of article.comment">
+            <p>{{comment.content}} <br> par: <b>{{comment.author}}</b></p>
+        </div>  
+    </div>
+    <button class="btn btn-primary" type="button" (click)="goBack()">Retour</button>
+</div>
+

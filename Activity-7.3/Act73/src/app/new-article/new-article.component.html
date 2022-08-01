@@ -1,0 +1,42 @@
+
+
+
+<div class="container">
+    <div class="articleForm">
+            <form [formGroup]="articleForm">
+        <h2>Entrez les données</h2>
+<div class="mb-3">
+    <label class="form-label" id="basic-addon1" for="title">Titre:</label>
+    <input type="text" class="form-control" aria-label="title"
+        aria-describedby="basic-addon1" id="title" formControlName="title">
+        
+</div>
+
+<div class="mb-3">
+    <span  class="form-label" for="content">Description:</span>
+    <textarea class="form-control" aria-label="With textarea" id="content"  formControlName="content" rows="4"  ></textarea>
+</div>
+<div class="mb-3">
+    <label class="form-label" id="basic-addon1" for="author">Auteur:</label>
+    <input type="text" class="form-control"  aria-label="author" aria-describedby="basic-addon1"
+        id="author" formControlName="author">
+</div>
+<div class="mb-3">
+    <label  class="form-label" id="basic-addon1" for="date">Date:</label>
+    <input  id="date" type="datetime" formControlName="date" class="form-control" aria-label="date"
+        aria-describedby="basic-addon1"  >
+</div>
+<div class="action-buttons">
+    <button type="submit" (click)="onSubmitForm()"  class="btn btn-success" [disabled]="articleForm.invalid">Enregistrer</button>
+</div>
+</form>
+</div>
+</div>
+<div class="container">
+<div class="face-snap-card" *ngIf="articlePreview$ | async as article">
+    <h2>titre: {{ article.title | uppercase }}</h2>
+    <p>date: {{ article.date | date: 'à HH:mm, le d MMMM yyyy' }}</p>
+    <p>{{ article.content }}</p>
+    <p>Par: {{ article.author }}</p>
+</div>
+</div>

@@ -1,0 +1,17 @@
+
+<button class="btn btn-success" (click)="onAddNewArticle()">Ajoutez un article</button>
+<h2>Les Actualitées de TALAN:</h2>
+<ul class="articles">
+    <li *ngFor="let article of articles  ">
+    <div class="card">
+        <div class="card-body">
+           <b>{{article.title}}</b>
+           <br>
+            {{article.content}}
+        </div>
+    </div>
+    <span class="badge"><a routerLink="/detail/{{article.id}}">Afficher les détails</a> </span> 
+    </li>
+</ul>
+
+<button class="btn btn-primary" type="button" (click)="goBack()">Retour</button>

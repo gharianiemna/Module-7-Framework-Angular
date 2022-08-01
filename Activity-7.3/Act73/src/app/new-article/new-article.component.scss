@@ -1,0 +1,14 @@
+body{
+    display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-content: center;
+}
+.container {
+    width: 50%;
+    box-shadow: lightgray 4px 4px 20px;
+    border-radius: 10px;
+    .articleForm {
+    margin: 20px auto;
+        padding: 10px 30px;
+    }}
