@@ -1,12 +1,11 @@
 
-
-<div  class="cardDetail" *ngIf="article">
+<div  class="cardDetail" *ngIf="article$ | async as article">
     <div class="card" style="width: 40rem;">
         <img src="https://talan.com/fileadmin/_processed_/d/6/csm_20190222-RM-Talan-014_d7c048c3a7.jpg" class="card-img-top" alt="talan">
         <div class="card-body">
             <br>
             <h5 class="card-title">{{article.title | uppercase}}</h5>
-            <p class="card-text">{{article.content}}</p>
+            <p class="card-text">{{article.body}}</p>
             <br>
             <div><span><b>Auteur: </b> </span>{{article.author}}</div>
             <div><span><b>Date: </b></span>{{article.date | date: ' d MMMM yyyy'}}</div>
@@ -15,7 +14,6 @@
         <div *ngFor="let comment of article.comment">
             <p>{{comment.content}} <br> par: <b>{{comment.author}}</b></p>
         </div>  
-      
         <div class="container">
             <div class="commentForm">
                 <form [formGroup]="commentForm">
@@ -30,7 +28,6 @@
                         <input type="text" class="form-control" aria-label="author" aria-describedby="basic-addon1" id="author"
                             formControlName="author">
                     </div>
-        
                     <div class="action-buttons">
                         <button type="submit" (click)="onSubmitForm()" class="btn btn-success"
                             [disabled]="commentForm.invalid">Enregistrer</button>
@@ -39,7 +36,5 @@
             </div>
         </div>
     </div>
-
 </div>
 <button class="btn btn-secondary" type="button" (click)="goBack()"> 👈🏻 Retour</button>
-

@@ -25,7 +25,7 @@ export class NewArticleComponent implements OnInit {
  ngOnInit(): void {
     this.articleForm = this.formBuilder.group({
         title: [null, [Validators.required]],
-        content:  [null, [Validators.required, Validators.maxLength(225)]],
+        body:  [null, [Validators.required, Validators.maxLength(225)]],
         date: [null,  this.validateDates()],
         author:[null],
     }, {
@@ -41,7 +41,7 @@ export class NewArticleComponent implements OnInit {
   }
 
   onSubmitForm() {
-      this.ArticlesService.addArticle(this.articleForm.value);
+      this.ArticlesService.addArticle(this.articleForm.value).subscribe();;
       this.router.navigateByUrl('/articleList');
   }
 
