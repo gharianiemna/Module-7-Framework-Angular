@@ -6,7 +6,7 @@ Pour exécuter le code voici les différentes commandes:
 https://github.com/gharianiemna/Module-7-Framework-Angular
 
 2-Se déplacer dans le dossier de l’act 6.2 
-cd Activité-6.2
+cd Activity-7.4
 cd Act-6.2
 
 3-Installer les dépendances 
@@ -22,10 +22,10 @@ php bin/console doctrine:migrations:migrate
  php bin/console doctrine:fixtures:load
 
 7- Lancez le serveur
-php bin/console server:exécuter
+php bin/console server:run
 
 8-Se déplacer dans le dossier de l'act 7.4
-cd Activity-7.34
+cd ..
 cd Act74
 
 9-Installer les dépendances 
@@ -33,4 +33,5 @@ npm install
 
 10-Lancer le serveur 
 ng serve --o
+
 
