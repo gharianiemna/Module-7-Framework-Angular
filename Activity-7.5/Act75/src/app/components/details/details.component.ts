@@ -1,9 +1,8 @@
-import { ArticlesService } from './../articles.service';
+import { ArticlesService } from '../../services/articles.service';
 import { Component, OnInit } from '@angular/core';
-import { Article } from '../articles';
+import { Article } from '../../articles';
 import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
-import { map } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
@@ -31,7 +30,6 @@ export class DetailsComponent implements OnInit {
       });
   }
 
-
   getArticlebyId(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     this.article$=this.ArticlesService.getDetail(id);
@@ -44,5 +42,5 @@ export class DetailsComponent implements OnInit {
 onSubmitForm() {
    const id = Number(this.route.snapshot.paramMap.get('id'))
     this.ArticlesService.addComment(this.commentForm.value, id);
-}
+  }
 }

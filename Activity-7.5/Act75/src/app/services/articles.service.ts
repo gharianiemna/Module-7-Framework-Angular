@@ -1,6 +1,6 @@
-import { ARTICLES } from './mock-articles';
+import { ARTICLES } from '../mock-articles';
 import { Injectable } from '@angular/core';
-import { Article } from './articles';
+import { Article } from '../articles';
 import { Observable, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { FormGroup } from '@angular/forms';
@@ -15,11 +15,11 @@ articlesList =ARTICLES;
 constructor(private http: HttpClient) {}
   
   getArticle(): Observable<Article[]> {
-  return this.http.get<Article[]>('http://127.0.0.1:8000/articles')
+  return this.http.get<Article[]>('http://127.0.0.1:8000/api/articles')
   }
 
   getDetail(id: number): Observable<Article> {
-  return this.http.get<Article>(`http://127.0.0.1:8000/article/${id}`);
+  return this.http.get<Article>(`http://127.0.0.1:8000/api/article/${id}`);
   }
  
 
@@ -33,6 +33,6 @@ constructor(private http: HttpClient) {}
 
 
   addArticle(articleInput:FormGroup ): Observable<any> {
-     return this.http.post<any>('http://127.0.0.1:8000/article',articleInput);
+     return this.http.post<any>('http://127.0.0.1:8000/api/article',articleInput);
 }
 }

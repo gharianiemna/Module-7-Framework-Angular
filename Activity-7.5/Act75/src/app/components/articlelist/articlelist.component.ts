@@ -1,6 +1,6 @@
-import { ArticlesService } from './../articles.service';
+import { ArticlesService } from '../../services/articles.service';
 import { Component, OnInit } from '@angular/core';
-import { Article } from '../articles';
+import { Article } from '../../articles';
 import { Location } from '@angular/common';
 import {Router} from '@angular/router';
 import { Observable, of } from 'rxjs';
@@ -33,4 +33,7 @@ constructor(private ArticlesService: ArticlesService, private router:Router    ,
         onAddNewArticle() {
     this.router.navigateByUrl('/create');
   }
+  //       onDetail() { 
+  //   this.router.navigateByUrl('/addEditControl/');
+  // }
 }

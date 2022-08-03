@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { UserService } from '../user.service';
-import { User } from '../user';
+import { UserService } from '../../services/user.service';
+import { User } from '../../user';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';

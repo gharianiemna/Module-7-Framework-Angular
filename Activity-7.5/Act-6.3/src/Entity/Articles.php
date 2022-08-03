@@ -15,6 +15,7 @@ class Articles
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @Serializer\Groups({"articles", "articlesById"})
      */
     private $id;
 

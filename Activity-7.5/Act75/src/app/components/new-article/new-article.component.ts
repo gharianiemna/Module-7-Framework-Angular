@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, ValidatorFn, AbstractControl } from '@angular/forms';
-import { Article } from '../articles';
+import { Article } from '../../articles';
 import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { ArticlesService } from './../articles.service';
+import { ArticlesService } from '../../services/articles.service';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 
