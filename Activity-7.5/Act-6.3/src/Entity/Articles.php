@@ -15,19 +15,19 @@ class Articles
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
-     * @Serializer\Groups({"articles", "articlesById"})
+     * @Serializer\Groups({"allArticles", "articlesById"})
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Serializer\Groups({"articles", "articlesById"})
+     * @Serializer\Groups({"allArticles", "articlesById"})
      */
     private $title;
 
     /**
      * @ORM\Column(type="text")
-     * @Serializer\Groups({"articles", "articlesById"})
+     * @Serializer\Groups({"allArticles", "articlesById"})
      */
     private $body;
 

@@ -1,17 +1,19 @@
-<h2>Les Actualitées de TALAN:</h2>
+<div id="navbarNav" >
+    <h2>Les Actualitées de TALAN:</h2>
+    <button class="btn btn-success" (click)="onAddNewArticle()">Ajouter un article</button>
+</div>
 <ul class="articles">
     <li *ngFor="let article of articles$ | async  ">
     <div class="card">
         <div class="card-body">
            <b>{{article.title}}</b>
            <br>
-            {{article.body}}
+            {{article.body}} 
         </div>
     </div>
-    <span class="badge"><a routerLink="/detail/{{article.id}}">Afficher les détails</a> </span> 
-<!-- <a routerLink="/detail/{{article.id}}"><button class="btn btn-success pull-right"> Onboard Control</button></a>
-    <button class="btn btn-success" (click)="onDetail()">Detail</button> -->
+    <span class="badge"><a routerLink="/detail/{{article.id}}" (click)="consol()">Afficher les détails</a> </span> 
+
     </li>
 </ul>
 
-<button class="btn btn-secondary" type="button" (click)="goBack()"> 👈🏻 Retour</button>  <button class="btn btn-success" (click)="onAddNewArticle()">Ajouter un article ➕</button>
+<button class="btn btn-secondary" type="button" (click)="goBack()"> 👈🏻 Retour</button> 

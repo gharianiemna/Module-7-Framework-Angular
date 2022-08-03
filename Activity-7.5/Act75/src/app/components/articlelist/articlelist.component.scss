@@ -1,4 +1,7 @@
-
+#navbarNav {
+    display: flex;
+    justify-content: space-between;
+}
 .articles {
 margin: 2rem 0 2em 2rem;
 list-style: none;
@@ -8,6 +11,7 @@ margin: 2rem;
         box-sizing: border-box;
         padding: 10px 30px;
         box-shadow: lightgray 4px 4px 20px;
+        
     }
 
 

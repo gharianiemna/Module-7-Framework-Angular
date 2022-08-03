@@ -35,7 +35,7 @@ use Symfony\Component\Serializer\Mapping\Loader\AnnotationLoader;
 class RestApiController extends AbstractController
 {
          /**
-     * @Rest\View(serializerGroups={"articles"})
+     * @Rest\View(serializerGroups={"allArticles"})
      * @Rest\Get("/articles")
      * @param ArticlesRepository $articlesRepo
      * @return Articles[]
@@ -47,7 +47,7 @@ class RestApiController extends AbstractController
 
 
      /**
-     * @Rest\View(serializerGroups={"articles"})
+     * @Rest\View(serializerGroups={"allArticles"})
      * @Rest\Get("/api/articles")
      * @param ArticlesRepository $articlesRepo
      * @return Articles[]
@@ -72,7 +72,7 @@ class RestApiController extends AbstractController
 
   /**
      * @Rest\Get("/api/article/lastThree")
-     * @Rest\View(serializerGroups={"articles"})
+     * @Rest\View(serializerGroups={"allArticles"})
      * @param ArticlesRepository $articlesRepo
      * @return Articles[]
      * @return object
@@ -84,7 +84,7 @@ class RestApiController extends AbstractController
     }
 
  /**
-     * @Rest\View(statusCode = 201, serializerGroups={"articles"})
+     * @Rest\View(statusCode = 201, serializerGroups={"allArticles"})
      * @Rest\Post("/api/article", name="PostArticle")
      */
     public function addAricle(EntityManagerInterface $em,Request $request,SerializerInterface $serializer)

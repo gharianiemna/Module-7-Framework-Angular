@@ -20,6 +20,7 @@ constructor(private ArticlesService: ArticlesService, private router:Router    ,
       }
     getArticle(): void {
       this.ArticlesService.getArticle().subscribe(articles => this.articles = articles);
+      console.log(this.articles);
     }
   
 
@@ -32,6 +33,9 @@ constructor(private ArticlesService: ArticlesService, private router:Router    ,
       }
         onAddNewArticle() {
     this.router.navigateByUrl('/create');
+  }
+  consol(){
+    console.log(this.articles)
   }
   //       onDetail() { 
   //   this.router.navigateByUrl('/addEditControl/');
