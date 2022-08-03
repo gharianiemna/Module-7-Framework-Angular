@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="commentForm">
+        <form [formGroup]="loginForm">
+            <h3 style="margin:1rem; align-self:center; align-content: center;">Connexion</h3>
+            <div class="mb-3">
+                <label class="form-label" id="basic-addon1" for="username">Email:</label>
+                <input type="text" class="form-control" aria-label="email" aria-describedby="basic-addon1" id="email"
+                    formControlName="username">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" id="basic-addon1" for="password">Password:</label>
+                <input type="text" class="form-control" aria-label="password" aria-describedby="basic-addon1" id="author"
+                    formControlName="password">
+            </div>
+            <div class="action-buttons">
+                <button type="submit" (click)="onSubmitForm()" class="btn btn-success"
+                    [disabled]="loginForm.invalid">Connexion</button>
+            </div>
+        </form>
+    </div>
+</div>
