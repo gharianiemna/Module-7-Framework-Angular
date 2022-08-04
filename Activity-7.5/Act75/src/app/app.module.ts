@@ -1,3 +1,4 @@
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -11,6 +12,8 @@ import { NewArticleComponent } from './components/new-article/new-article.compon
 import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { LoginComponent } from './components/login/login.component';
 import { Interceptor } from './interceptor';
+import { JwtHelperService , JWT_OPTIONS } from '@auth0/angular-jwt';
+import { AuthGuardService } from './services/auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,9 @@ import { Interceptor } from './interceptor';
     ReactiveFormsModule,
     HttpClientModule 
   ],
-  providers: [{provide: HTTP_INTERCEPTORS, useClass: Interceptor, multi: true},],
+  providers: [{provide: HTTP_INTERCEPTORS, useClass: Interceptor, multi: true}, { provide: JWT_OPTIONS , useValue: JWT_OPTIONS},
+   AuthGuardService, JwtHelperService 
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

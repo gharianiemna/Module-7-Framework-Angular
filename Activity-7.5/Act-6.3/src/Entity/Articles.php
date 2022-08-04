@@ -33,13 +33,13 @@ class Articles
 
     /**
      * @ORM\Column(type="date")
-     * @Serializer\Groups({"articlesById"})
+     * @Serializer\Groups({"articlesById", "allArticles"})
      */
     private $date;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Serializer\Groups({"articlesById"})
+     * @Serializer\Groups({"articlesById", "allArticles", })
      */
     private $author;
 
