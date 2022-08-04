@@ -19,7 +19,6 @@ export class DetailsComponent implements OnInit {
   articlePreview$!: Observable<Article>;
 
   constructor(private formBuilder: FormBuilder,  private router: Router, private route: ActivatedRoute, private ArticlesService: ArticlesService,  private location: Location  ) {}
-
   ngOnInit(): void {
       this.getArticlebyId();
       this.commentForm = this.formBuilder.group({
@@ -29,17 +28,14 @@ export class DetailsComponent implements OnInit {
       updateOn: 'blur'
       });
   }
-
   getArticlebyId(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     this.article$=this.ArticlesService.getDetail(id);
   }
-
   goBack(): void {
     this.location.back();
   }
-
-onSubmitForm() {
+  onSubmitForm() {
    const id = Number(this.route.snapshot.paramMap.get('id'))
     this.ArticlesService.addComment(this.commentForm.value, id);
   }

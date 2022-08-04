@@ -14,7 +14,7 @@ import { LoginComponent } from './components/login/login.component';
 import { Interceptor } from './interceptor';
 import { JwtHelperService , JWT_OPTIONS } from '@auth0/angular-jwt';
 import { AuthGuardService } from './services/auth-guard.service';
-
+import { RoleGuardService } from './services/role-guard.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +24,6 @@ import { AuthGuardService } from './services/auth-guard.service';
     HeaderComponent,
     NewArticleComponent,
     LoginComponent,
-
   ],
   imports: [
     BrowserModule,
@@ -33,7 +32,7 @@ import { AuthGuardService } from './services/auth-guard.service';
     HttpClientModule 
   ],
   providers: [{provide: HTTP_INTERCEPTORS, useClass: Interceptor, multi: true}, { provide: JWT_OPTIONS , useValue: JWT_OPTIONS},
-   AuthGuardService, JwtHelperService 
+   AuthGuardService, RoleGuardService, JwtHelperService 
   ],
   bootstrap: [AppComponent]
 })

@@ -12,32 +12,22 @@ import { Observable, of } from 'rxjs';
 })
 export class ArticlelistComponent implements OnInit {
 
-articles: Article[] = [];
-articles$!: Observable<Article[]>;
+  articles: Article[] = [];
+  articles$!: Observable<Article[]>;
 
-constructor(private ArticlesService: ArticlesService, private router:Router    ,private location: Location) {
-
+  constructor(private ArticlesService: ArticlesService, private router:Router    ,private location: Location) { }
+  getArticle(): void {
+        this.ArticlesService.getArticle().subscribe(articles => this.articles = articles);
+        console.log(this.articles);
       }
-    getArticle(): void {
-      this.ArticlesService.getArticle().subscribe(articles => this.articles = articles);
-      console.log(this.articles);
-    }
-  
-
-    ngOnInit(): void {
+  ngOnInit(): void {
       this.articles$=this.ArticlesService.getArticle();
-      }
-
-    goBack(): void {
-        this.location.back();
-      }
-        onAddNewArticle() {
+  }
+  goBack(): void {
+      this.location.back();
+  }
+  onAddNewArticle() {
     this.router.navigateByUrl('/create');
   }
-  consol(){
-    console.log(this.articles)
-  }
-  //       onDetail() { 
-  //   this.router.navigateByUrl('/addEditControl/');
-  // }
+  
 }

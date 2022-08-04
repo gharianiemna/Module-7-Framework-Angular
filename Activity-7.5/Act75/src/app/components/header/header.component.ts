@@ -9,14 +9,11 @@ import { UserService } from 'src/app/services/user.service';
 export class HeaderComponent implements OnInit {
 isAuth!:boolean;
   constructor(private router:Router, private userService:UserService) { }
-
- 
   ngOnInit(): void { }
   onLogout() : void {
     localStorage.removeItem('jwt');
     this.router.navigateByUrl('login');
   }
-
   isLoggedIn() {
     return localStorage.getItem('jwt');
   }

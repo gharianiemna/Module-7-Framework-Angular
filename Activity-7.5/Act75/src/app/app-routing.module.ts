@@ -7,6 +7,8 @@ import {DetailsComponent} from './components/details/details.component'
 import { NewArticleComponent } from './components/new-article/new-article.component';
 import { LoginComponent } from './components/login/login.component';
 import {   AuthGuardService as AuthGuard } from'./services/auth-guard.service';
+import { RoleGuardService as RoleGuard} from './services/role-guard.service';
+
 
 
 const routes: Routes = [
@@ -14,7 +16,9 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'articleList', component: ArticlelistComponent, canActivate: [AuthGuard]  },
   { path: 'detail/:id', component:DetailsComponent, canActivate: [AuthGuard] },
-  { path: 'create', component:NewArticleComponent, canActivate: [AuthGuard] },
+  { path: 'create', component:NewArticleComponent, canActivate: [RoleGuard],  data: { 
+      expectedRole: "ROLE_ADMIN"
+    } },
   { path: 'login', component:LoginComponent},
 ];
 
