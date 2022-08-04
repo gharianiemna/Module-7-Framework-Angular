@@ -36,7 +36,9 @@ export class DetailsComponent implements OnInit {
     this.location.back();
   }
   onSubmitForm() {
+    const article =this.getArticlebyId()
+    console.log(article);
    const id = Number(this.route.snapshot.paramMap.get('id'))
-    this.ArticlesService.addComment(this.commentForm.value, id);
+    this.ArticlesService.addComment(this.commentForm.value).subscribe();
   }
 }

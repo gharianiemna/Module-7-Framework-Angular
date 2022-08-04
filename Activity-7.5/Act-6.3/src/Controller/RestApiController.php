@@ -28,9 +28,8 @@ use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Common\Annotations\AnnotationReader;
 use Symfony\Component\Serializer\Mapping\Factory\ClassMetadataFactory;
 use Symfony\Component\Serializer\Mapping\Loader\AnnotationLoader;
-
-
-
+use App\Repository\CommentRepository;
+use App\Entity\Comment;
 
 class RestApiController extends AbstractController
 {
@@ -99,6 +98,35 @@ class RestApiController extends AbstractController
         }
     }
 
+     /**
+     * @Rest\View(statusCode = 201, serializerGroups={"articlesById"})
+     * @Rest\Post("/api/comment", name="PostComment")
+     */
+    public function addComment(EntityManagerInterface $em,Request $request,SerializerInterface $serializer)
+    {
+        try {
+            $comment = $serializer->deserialize($request->getContent(),Comment::class,'json');
+            $em->merge($comment);
+            $em->flush();
+            return $comment;
+        } catch (NotEncodableValueException $e) {
+            return $this->json(["error message"=>$e->getMessage()],400);
+        }
+    }
+    /**
+     * @Rest\View(serializerGroups={"comments"})
+    * @Rest\Get("/api/comments")
+    * @param CommentRepository $commsRepo
+     * @return Comment[]
+     * 
+ */
+public function getComments( CommentRepository $commsRepo)
+    {
+          return $commsRepo->findAll();
+ 
+    }
+
+    
     /**
      * @Put("/api/article/{id}", name="edit")
      */

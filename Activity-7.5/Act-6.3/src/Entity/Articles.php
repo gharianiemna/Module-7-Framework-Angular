@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Entity;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Symfony\Component\Serializer\Annotation\Groups;
 use JMS\Serializer\Annotation as Serializer;
 use App\Repository\ArticlesRepository;
@@ -42,6 +44,17 @@ class Articles
      * @Serializer\Groups({"articlesById", "allArticles", })
      */
     private $author;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Comment::class, mappedBy="articles")
+     * @Serializer\Groups({"articlesById"})
+     */
+    private $comments;
+
+    public function __construct()
+    {
+        $this->comments = new ArrayCollection();
+    }
 
    
 
@@ -94,6 +107,36 @@ class Articles
     public function setAuthor(string $author): self
     {
         $this->author = $author;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Comment>
+     */
+    public function getComments(): Collection
+    {
+        return $this->comments;
+    }
+
+    public function addComment(Comment $comment): self
+    {
+        if (!$this->comments->contains($comment)) {
+            $this->comments[] = $comment;
+            $comment->setArticles($this);
+        }
+
+        return $this;
+    }
+
+    public function removeComment(Comment $comment): self
+    {
+        if ($this->comments->removeElement($comment)) {
+            // set the owning side to null (unless already changed)
+            if ($comment->getArticles() === $this) {
+                $comment->setArticles(null);
+            }
+        }
 
         return $this;
     }

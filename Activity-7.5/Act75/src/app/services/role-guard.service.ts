@@ -19,7 +19,7 @@ export class RoleGuardService implements CanActivate {
       tokenPayload.roles[0] !== expectedRole 
     ) {
         window.alert('acces interdit')
-      this.router.navigate(['home']);
+    //   this.router.navigate(['home']);
       return false;
     }
     return true;
